@@ -16,9 +16,6 @@ We recommend working within a virtual environment whenever using Python for proj
 python -m venv .venv
 ```
 
-```terminal
-py -m venv .venv
-```
 #### PIP Dependencies
 
 Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
@@ -27,12 +24,6 @@ Once you have your virtual environment setup and running, install dependencies b
 source .venv/Scripts/activate
 pip install -r requirements.txt
 ```
-
-```terminal
-.venv/Scripts/activate
-pip install -r requirements.txt
-```
-
 
 This will install all of the required packages we selected within the `requirements.txt` file.
 
@@ -55,12 +46,6 @@ cd ./src
 export FLASK_APP=api.py
 export FLASK_ENV=development
 ```
-```terminal
-cd ./src
-$env:FLASK_APP="api.py"
-$env:FLASK_ENV="development"
-```
-
 
 To run the server, execute:
 

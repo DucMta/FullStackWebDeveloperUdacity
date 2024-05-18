@@ -34,35 +34,26 @@ class AuthError(Exception):
 
 
 def get_token_auth_header():
-    auth = request.headers.get('Authorization', None)
-
-    if not auth:
-        print('Authorization header is missing')
+    if 'Authorization' not in request.headers:
         raise AuthError({
-            'code': 'authorization_header_missing',
-            'description': 'Authorization header is missing.'
+            'code': 'Authorization is not in request',
+            'description': 'Authorization is not in request'
         }, 401)
+  
+    auth_header = request.headers['Authorization']
+    header_parts = auth_header.split(' ')
 
-    parts = auth.split()
-
-    if parts[0].lower() != 'bearer':
-        print('Authorization header should start with Bearer')
+    if len(header_parts) != 2:
         raise AuthError({
             'code': 'invalid_header',
-            'description': 'Authorization header should '
-                           'start with "Bearer"'
+            'description': 'Token is invalid'
         }, 401)
-
-    elif len(parts) == 1:
-        print('Token not found')
+    elif header_parts[0].lower() != 'bearer':
         raise AuthError({
             'code': 'invalid_header',
-            'description': 'Token not found'
+            'description': 'Header should start with bearer'
         }, 401)
-
-    token = parts[1]
-
-    return token
+    return header_parts[1]
 
 
 '''
@@ -77,18 +68,17 @@ def get_token_auth_header():
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
         raise AuthError({
-            'code': 'invalid_claims',
-            'description': 'Permissions not found in JWT payload'
+            'code': 'invalid claims',
+            'description': 'Permissions not found'
         }, 400)
-
+    
     if permission not in payload['permissions']:
         raise AuthError({
             'code': 'unauthorized',
-            'description': 'Permission not allowed.'
-        }, 403)
-
+            'description': 'Permission is not allowed'
+        }, 401)        
+    
     return True
-
 
 '''
 @TODO implement verify_decode_jwt(token) method
@@ -104,64 +94,65 @@ def check_permissions(permission, payload):
 
 
 def verify_decode_jwt(token):
-    jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
-    jwks = json.loads(jsonurl.read())
-    unverified_header = jwt.get_unverified_header(token)
-    rsa_key = {}
 
-    if 'kid' not in unverified_header:
-        print("thorization malformed")
+    jsonUrl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
+    jwks = json.loads(jsonUrl.read())
+    
+    unverifiedHeader = jwt.get_unverified_header(token)
+    
+    rsaKey = {}
+    if 'kid' not in unverifiedHeader:
+        print('Authorization malformed')
         raise AuthError({
             'code': 'invalid_header',
-            'description': 'Authorization malformed.'
+            'description': 'Authorization malformed'
         }, 401)
 
     for key in jwks['keys']:
-        if key['kid'] == unverified_header['kid']:
-            rsa_key = {
+        if key['kid'] == unverifiedHeader['kid']:
+            rsaKey = {
                 'kty': key['kty'],
                 'kid': key['kid'],
                 'use': key['use'],
                 'n': key['n'],
                 'e': key['e'],
             }
-
-    if rsa_key:
+    
+    if rsaKey:
         try:
             payload = jwt.decode(
                 token,
-                rsa_key,
+                rsaKey,
                 algorithms=ALGORITHMS,
                 audience=API_AUDIENCE,
-                issuer=f'https://{AUTH0_DOMAIN}/'
+                issuer='https://' + AUTH0_DOMAIN + '/'
             )
 
             return payload
 
-        except jwt.ExpiredSignatureError as e:
-            print(e)
+        except jwt.ExpiredSignatureError as error:
+            print(error)
             raise AuthError({
                 'code': 'token_expired',
                 'description': 'Token expired.'
             }, 401)
-        except jwt.JWTClaimsError:
-            print(e)
+
+        except jwt.JWTClaimsError as error:
+            print(error)
             raise AuthError({
                 'code': 'invalid_claims',
-                'description': 'Incorrect claims. '
-                               'Audience and Issuer might be wrong'
+                'description': 'Incorrect claims. Check the audience and issuer.'
             }, 401)
-        except Exception as e:
-            print(e)
+        except Exception as error:
+            print(error)
             raise AuthError({
                 'code': 'invalid_header',
-                'description': 'Unable to parse auth token'
+                'description': 'Unable to parse auth token.'
             }, 400)
-
     raise AuthError({
-        'code': 'invalid_header',
-        'description': 'Unable to find appropriate key.'
-    }, 400)
+                'code': 'invalid_header',
+                'description': 'Unable to find the appropriate key.'
+            }, 400)
 
 
 '''
@@ -169,24 +160,20 @@ def verify_decode_jwt(token):
     @INPUTS
         permission: string permission (i.e. 'post:drink')
 '''
-
-
 def requires_auth(permission=''):
     def requires_auth_decorator(f):
         @wraps(f)
         def wrapper(*args, **kwargs):
-            token = get_token_auth_header()
-            try:
-                payload = verify_decode_jwt(token)
-            except Exception as e:
-                print(e)
-                raise AuthError({
-                    'code': 'invalid_token',
-                    'description': 'Token could not be verified'
-                }, 401)
-            check_permissions(permission, payload)
-            return f(payload, *args, **kwargs)
-
-        return wrapper
-
+                jwt = get_token_auth_header()
+                try:
+                    payload = verify_decode_jwt(jwt)
+                except Exception as error:
+                    print(error)
+                    raise AuthError({
+                        'code': 'invalid token',
+                        'description': 'Could not verify token'
+                    }, 400)
+                check_permissions(permission, payload)
+                return f(payload, *args, **kwargs)
+        return wrapper          
     return requires_auth_decorator
