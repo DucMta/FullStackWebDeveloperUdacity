@@ -1,0 +1,759 @@
+{
+	"info": {
+		"_postman_id": "1ba15e52-02ff-43c1-b0af-393b7f5c4d6f",
+		"name": "flaskcasting-capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34903758"
+	},
+	"item": [
+		{
+			"name": "Casting Assistant",
+			"item": [
+				{
+					"name": "/movies/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/create",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/create",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlfeHRzcklfek1sWjZKTGViRFpNYyJ9.eyJpc3MiOiJodHRwczovL2Rldi1ieml5aGk4cXdhZWt3ZDN6LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExNTYyMjAyMzc2ODYxOTc0Mzk5OCIsImF1ZCI6ImltYWdlIiwiaWF0IjoxNzIwMzQyNDg1LCJleHAiOjE3MjAzNzg0ODUsInNjb3BlIjoiIiwiYXpwIjoiRFZobmRPM2U1SFdsS3FENnJ6RHU2ZG1Hc1VheVhyVDAiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.JSe1ok7fdUNdIJwJxkbDpCvac-ztuP7pcXWXXJUGODkIGuAR0a2__Y_YiC7qJL4U2wJBBWDZaIb7Jp6G7rmHrTzu-nkhR1m8P40MnL04LiSQEn1awyAZneG4qPKgx8EEWtHzDB02pwtIzPk-cNbRlBThFKVhCZkLYrkbqI-M-SlrF8SxcKgC7lobJ7WU2iRqxGe6Fec3KhXUBng-GaEeWiocN8n5jJG2jGT1_obJYHtCu7tJHox8cWpH-U5ARCYi1Crnid1I_kg57TeS1xap73u4UA3wbUOcwt0iJG8tsGnsLC8gkPvgFo-yjuSc4rsqXLCryzLLVr34s4THMPxY6g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/update/1",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/update/2",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/delete/1",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/delete/2",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlfeHRzcklfek1sWjZKTGViRFpNYyJ9.eyJpc3MiOiJodHRwczovL2Rldi1ieml5aGk4cXdhZWt3ZDN6LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDExNTYyMjAyMzc2ODYxOTc0Mzk5OCIsImF1ZCI6ImltYWdlIiwiaWF0IjoxNzIwMzQyNDg1LCJleHAiOjE3MjAzNzg0ODUsInNjb3BlIjoiIiwiYXpwIjoiRFZobmRPM2U1SFdsS3FENnJ6RHU2ZG1Hc1VheVhyVDAiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.JSe1ok7fdUNdIJwJxkbDpCvac-ztuP7pcXWXXJUGODkIGuAR0a2__Y_YiC7qJL4U2wJBBWDZaIb7Jp6G7rmHrTzu-nkhR1m8P40MnL04LiSQEn1awyAZneG4qPKgx8EEWtHzDB02pwtIzPk-cNbRlBThFKVhCZkLYrkbqI-M-SlrF8SxcKgC7lobJ7WU2iRqxGe6Fec3KhXUBng-GaEeWiocN8n5jJG2jGT1_obJYHtCu7tJHox8cWpH-U5ARCYi1Crnid1I_kg57TeS1xap73u4UA3wbUOcwt0iJG8tsGnsLC8gkPvgFo-yjuSc4rsqXLCryzLLVr34s4THMPxY6g",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Casting Director",
+			"item": [
+				{
+					"name": "/movies/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Sharks 5\",\n\t\"release_year\": \"2015\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/create",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Le Huynh Duc\",\n\t\"age\": 24,\n    \"id\": 2,\n\t\"gender\": \"female\",\n\t\"movie_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/create",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Titanic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/update/1",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Jack\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/update/2",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/delete/1",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/delete/2",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlfeHRzcklfek1sWjZKTGViRFpNYyJ9.eyJpc3MiOiJodHRwczovL2Rldi1ieml5aGk4cXdhZWt3ZDN6LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwOTQ3Nzg0MzIwNjAyMzg2NTM1NyIsImF1ZCI6ImltYWdlIiwiaWF0IjoxNzIwMzQyNTY3LCJleHAiOjE3MjAzNzg1NjcsInNjb3BlIjoiIiwiYXpwIjoiRFZobmRPM2U1SFdsS3FENnJ6RHU2ZG1Hc1VheVhyVDAiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzL2RlbGV0ZSIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzL3VwZGF0ZSIsInBhdGNoOm1vdmllcy91cGRhdGUiLCJwb3N0OmFjdG9ycy9jcmVhdGUiXX0.TqKvPBaOoUDrOPfg6wvApHGCiF7CtUrLSvQIA8vgQxew6bS_tKDzVbAkI6VerRETXj86s_KenqdI3vRPQmxymGCSYr12yfyzos_rAzqiTKW-cXimP_RL5kBljdOw_avVgPnJ5BiYK_KK_89VoAFrWS9J-7pVmAu7eUolUnt2UU4dLISqx5GGn8YSMTAICoMaMOiwustaRJbIENTuAB8bANl1x3WqKMNA-nJsROsgrofN8doP-08HXBOC3ceUiXByYikDR7Tbb-zyCGnbotTfS9Va1g-RkwLknxxh3_vcZM2um-fSwbXigXXGIIPz6FasAhikHGXk8u-hEIZJYVjOcA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Executive Producer",
+			"item": [
+				{
+					"name": "/movies/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Sharks 2\",\n\t\"release_year\": \"2012\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/create",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Godfred\",\n\t\"age\": 12,\n\t\"gender\": \"Male\",\n\t\"movie_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/create",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"The Mask\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/update/1",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"LiLi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/update/3",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/movies/delete/3",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://capstone-1-t1ig.onrender.com/actors/delete/2",
+							"protocol": "https",
+							"host": [
+								"capstone-1-t1ig",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjlfeHRzcklfek1sWjZKTGViRFpNYyJ9.eyJpc3MiOiJodHRwczovL2Rldi1ieml5aGk4cXdhZWt3ZDN6LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NjNmYWRmZDM3MDZlYmRhN2Q3ZjhmYjkiLCJhdWQiOiJpbWFnZSIsImlhdCI6MTcyMDM0MjYwNywiZXhwIjoxNzIwMzc4NjA3LCJzY29wZSI6IiIsImF6cCI6IkRWaG5kTzNlNUhXbEtxRDZyekR1NmRtR3NVYXlYclQwIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycy9kZWxldGUiLCJkZWxldGU6ZHJpbmtzIiwiZGVsZXRlOm1vdmllcy9kZWxldGUiLCJnZXQ6YWN0b3JzIiwiZ2V0OmRyaW5rcy1kZXRhaWwiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzL3VwZGF0ZSIsInBhdGNoOmRyaW5rcyIsInBhdGNoOm1vdmllcy91cGRhdGUiLCJwb3N0OmFjdG9ycy9jcmVhdGUiLCJwb3N0OmFjdG9ycy9uZXciLCJwb3N0OmRyaW5rcyIsInBvc3Q6bW92aWVzL2NyZWF0ZSIsInBvc3Q6bW92aWVzL25ldyJdfQ.jUf1FzFt0VP-XqTZFWtCjaM-oNJhlSAjpZeQZcmzUaD47B9eQrlFlOVVAdOyTVdWypU61xaUjsemgl31bWyzM4d4R8o2xrHY7yec5Upms3jrdl1Tf5CxugZC8uL8NPFhzb24fJmqpIrHYOwU6fA0nhK9No-9s0YIw305yuyxKXz5H24Bm0S1TtVOzjFL9l6qod2f35qvdrCZyEI_avew0kromTeQndDt8WCM6geZioiYr_D2L9OG9Xa95M8HQPNnw1Evzy9njvw0kpMLANhuLBscohqhEUZh3jcZSy4yA5qkvHPtVtEdgvvN73Pk31yzpy_AjHxh_l5LXhuyM8iFSg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
